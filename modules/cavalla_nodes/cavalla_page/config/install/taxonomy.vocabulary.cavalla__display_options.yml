@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Display Options'
+vid: cavalla__display_options
+description: 'Display Options is a configuration field that defines display settings for content presentation on Cavalla Pages..'
+weight: 0
+new_revision: false

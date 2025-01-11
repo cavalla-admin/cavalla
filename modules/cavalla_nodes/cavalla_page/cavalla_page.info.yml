@@ -1,0 +1,10 @@
+name: 'Cavalla Site Builder: Page'
+type: module
+description: 'c'
+version: 8.x-3.0
+core: 8.x
+package: 'Cavalla Site Builder'
+dependencies:
+  - menu_ui
+
+core_version_requirement: ^8 || ^9 || ^10

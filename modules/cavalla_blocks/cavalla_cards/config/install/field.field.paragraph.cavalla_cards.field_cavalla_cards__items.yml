@@ -1,0 +1,63 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_cavalla_cards__items
+    - paragraphs.paragraphs_type.cavalla_card
+    - paragraphs.paragraphs_type.cavalla_cards
+  module:
+    - entity_reference_revisions
+id: paragraph.cavalla_cards.field_cavalla_cards__items
+field_name: field_cavalla_cards__items
+entity_type: paragraph
+bundle: cavalla_cards
+label: Cards
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      cavalla_card: cavalla_card
+    negate: 0
+    target_bundles_drag_drop:
+      cards:
+        weight: 12
+        enabled: false
+      cavalla_body:
+        weight: 13
+        enabled: false
+      cavalla_card:
+        weight: 14
+        enabled: true
+      cavalla_cards:
+        weight: 16
+        enabled: false
+      cavalla_eyebrow:
+        weight: 15
+        enabled: false
+      cavalla_header:
+        weight: 16
+        enabled: false
+      cavalla_link:
+        weight: 17
+        enabled: false
+      cavalla_media:
+        weight: 18
+        enabled: false
+      cavalla_tm:
+        weight: 19
+        enabled: false
+      copy:
+        weight: 20
+        enabled: false
+      hero_image:
+        weight: 21
+        enabled: false
+      image:
+        weight: 22
+        enabled: false
+field_type: entity_reference_revisions

@@ -1,0 +1,51 @@
+<div class="accordion accordion-flush border" id="cavalla-event--filter">
+    <div class="accordion-item">
+        <h3 class="accordion-header" id="flush-headingOne">
+            <button class="accordion-button collapsed fs-6" type="button" data-bs-toggle="collapse" data-bs-target="#cavalla-event--state" aria-expanded="false" aria-controls="flush-collapseOne">State</button>
+        </h3>
+            <!--State-->
+        <div id="cavalla-event--state" class="accordion-collapse collapse"  data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+                <select class="form-select">
+                    <option value="">Filter By State</option>
+                    {% for value in event_state %}
+                    <option class="cavalla-event--input" value="{{ value.state_id }}">{{ value.state }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+    </div>
+    <!--Date-->
+    <div class="accordion-item">
+        <h3 class="accordion-header" id="flush-headingOne">
+            <button class="accordion-button collapsed fs-6" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseOne">Date</button>
+        </h3>
+        <div id="flush-collapseTwo" class="accordion-collapse collapse"  data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+                <div id="cavalla_event--calendar"></div>
+            </div>
+        </div>
+    </div>
+    <!--Price-->
+    <div class="accordion-item">
+        <h3 class="accordion-header" id="cavalla-event--price-accordion">
+            <button class="accordion-button collapsed fs-6" type="button" data-bs-toggle="collapse" data-bs-target="#cavalla-event--price" aria-expanded="false" >Price</button>
+        </h3>
+        <div id="cavalla-event--price" class="accordion-collapse collapse" >
+            <div class="accordion-body">
+                <div class="form-check">
+                    <input class="form-check-input cavalla-event--input" type="radio" value="all" name="cavalla-event--radio"  required>
+                    <label class="form-check-label" for="flexCheckDefault1">Any Price</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input cavalla-event--input" type="radio" value="free" name="cavalla-event--radio" required>
+                    <label class="form-check-label" for="flexCheckDefault2">Free</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input cavalla-event--input" type="radio" value="paid" name="cavalla-event--radio" required>
+                    <label class="form-check-label" for="flexCheckChecked3">Paid Event</label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

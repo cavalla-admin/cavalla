@@ -1,0 +1,10 @@
+accordions:
+  js:
+    dist/js/accordions.bundle.js:  { attributes: { type : "module" } }
+carousels:
+  js:
+    dist/js/carousels.bundle.js: { attributes: { type : "module" } }
+global:
+  css:
+    theme:
+      css/styles.css: {}

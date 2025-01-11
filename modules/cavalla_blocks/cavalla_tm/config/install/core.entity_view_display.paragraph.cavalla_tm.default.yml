@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.cavalla_tm.field_cavalla_copy__site_blocks
+    - paragraphs.paragraphs_type.cavalla_tm
+  module:
+    - entity_reference_revisions
+    - layout_builder
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: paragraph.cavalla_tm.default
+targetEntityType: paragraph
+bundle: cavalla_tm
+mode: default
+content:
+  field_cavalla_copy__site_blocks:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 3
+    region: first
+hidden:
+  layout_builder__layout: true

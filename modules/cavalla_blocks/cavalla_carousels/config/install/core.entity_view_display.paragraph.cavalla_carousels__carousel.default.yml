@@ -1,0 +1,40 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.cavalla_carousels__carousel.field_cavalla_carousels__ch
+    - field.field.paragraph.cavalla_carousels__carousel.field_cavalla_carousels__cimg
+    - field.field.paragraph.cavalla_carousels__carousel.field_cavalla_carousels__ct
+    - paragraphs.paragraphs_type.cavalla_carousels__carousel
+  module:
+    - text
+id: paragraph.cavalla_carousels__carousel.default
+targetEntityType: paragraph
+bundle: cavalla_carousels__carousel
+mode: default
+content:
+  field_cavalla_carousels__ch:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_cavalla_carousels__cimg:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_cavalla_carousels__ct:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

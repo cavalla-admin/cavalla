@@ -1,0 +1,81 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_cavalla_page__site_blocks
+    - node.type.cavalla_page
+    - paragraphs.paragraphs_type.cavalla_accordions
+    - paragraphs.paragraphs_type.cavalla_cards
+    - paragraphs.paragraphs_type.cavalla_carousels
+    - paragraphs.paragraphs_type.cavalla_tm
+  module:
+    - entity_reference_revisions
+id: node.cavalla_page.field_cavalla_page__site_blocks
+field_name: field_cavalla_page__site_blocks
+entity_type: node
+bundle: cavalla_page
+label: 'Site Blocks'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      cavalla_accordions: cavalla_accordions
+      cavalla_cards: cavalla_cards
+      cavalla_carousels: cavalla_carousels
+      cavalla_tm: cavalla_tm
+    negate: 0
+    target_bundles_drag_drop:
+      cavalla_accordions:
+        weight: 15
+        enabled: true
+      cavalla_accordions__accordion:
+        weight: 16
+        enabled: false
+      cavalla_body:
+        weight: 17
+        enabled: false
+      cavalla_card:
+        weight: 18
+        enabled: false
+      cavalla_cards:
+        weight: 19
+        enabled: true
+      cavalla_carousels:
+        weight: 22
+        enabled: true
+      cavalla_carousels__carousel:
+        weight: 23
+        enabled: false
+      cavalla_eyebrow:
+        weight: 20
+        enabled: false
+      cavalla_header:
+        weight: 21
+        enabled: false
+      cavalla_hero:
+        weight: 22
+        enabled: false
+      cavalla_image:
+        weight: 23
+        enabled: false
+      cavalla_link:
+        weight: 24
+        enabled: false
+      cavalla_media:
+        weight: 25
+        enabled: false
+      cavalla_tm:
+        weight: 26
+        enabled: true
+      copy:
+        weight: 27
+        enabled: false
+      hero_image:
+        weight: 28
+        enabled: false
+field_type: entity_reference_revisions

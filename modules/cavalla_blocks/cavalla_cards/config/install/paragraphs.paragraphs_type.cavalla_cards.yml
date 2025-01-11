@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: cavalla_cards
+label: Cards
+icon_uuid: null
+icon_default: null
+description: 'Cards are visually distinct content blocks used on the Cavalla website, designed to highlight key information, products, or services in a compact, card-like format.'
+behavior_plugins: {  }

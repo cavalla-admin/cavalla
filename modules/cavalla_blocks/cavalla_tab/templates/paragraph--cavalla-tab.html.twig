@@ -1,0 +1,44 @@
+<div id="cavalla_tab">
+	<div class="container mt-5 mb-5">
+		<h2 class="text-center h2 mb-5">{{ content.field_cavalla_tab__title[0] }}</h2>
+
+		<!--Desktop Menu-->
+		<ul class="nav nav-tabs d-none d-md-flex" id="myTab" role="tablist">
+			{% include '@cavalla_tab/templates/tabs.html.twig' %}
+		</ul>
+
+		<!--mobile menu-->
+		<div class="col-12 d-flex d-md-none">
+			<div class="position-relative w-100" id="mobile_tab">
+				<a class="btn btn-outline-warning dropdown-toggle col-12 p-3" href="#" role="button" id="cavalla_tab__dropdown" data-bs-toggle="dropdown" aria-expanded="false">{{ active_button }}</a>
+				<ul class="dropdown-menu" id="myTab" role="tablist">
+					{% include '@cavalla_tab/templates/mobile-tabs.html.twig' %}
+				</ul>
+			</div>
+		</div>
+		<!--mobile menu-->
+
+		<div class="tab-content">
+			{% for item in tab_content %}
+				<div class="tab-pane fade {{ is_active }}" id="{{ tab_panel_id }}" role="tabpanel">
+					<div class="container my-5">
+						<div class="row">
+							<div class="col-12 col-sm-12 col-md-6 order-1 align-self-center">
+								<h2>{{ item.header }}</h2>
+								<div>
+									{{ item.body }}
+								</div>
+								<div>
+									{{ item.links }}
+								</div>
+							</div>
+							<div class="col-12 col-sm-12 col-md-6 align-self-center mb-2" style="{{ is_home_page ? 'order:-1' : '' }}">
+								<!--<img src="{{ image[0]['image'] }}" alt="{{ image[0]['image_alt'] }}" width="100%"/>-->
+							</div>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+</div>

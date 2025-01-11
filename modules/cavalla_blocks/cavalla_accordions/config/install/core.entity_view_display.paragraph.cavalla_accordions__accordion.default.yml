@@ -1,0 +1,30 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.cavalla_accordions__accordion.field_cavalla_accordions__abody
+    - field.field.paragraph.cavalla_accordions__accordion.field_cavalla_accordions__ahead
+    - paragraphs.paragraphs_type.cavalla_accordions__accordion
+  module:
+    - text
+id: paragraph.cavalla_accordions__accordion.default
+targetEntityType: paragraph
+bundle: cavalla_accordions__accordion
+mode: default
+content:
+  field_cavalla_accordions__abody:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_cavalla_accordions__ahead:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

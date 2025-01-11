@@ -1,0 +1,31 @@
+<div class="accordion accordion-flush mt-4" id="{{ id_name }}">
+	{% if content.field_cavalla_header__text or content.field_cavalla_body %}
+		<div class="row">
+
+			{% if content.field_cavalla_header__text %}
+				<h2>{{ content.field_cavalla_header__text }}</h2>
+			{% endif %}
+
+			{% if content.field_cavalla_body %}
+				<div>{{ content.field_cavalla_body }}</div>
+			{% endif %}
+
+		</div>
+	{% endif %}
+	<div class="row">
+		{% for item in accordion_content %}
+			<div class="accordion-item">
+				<h2 class="accordion-header">
+					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion--{{ loop.index }}" aria-expanded="true" aria-controls="accordion--{{ loop.index }}">
+						{{ item.header }}
+					</button>
+				</h2>
+				<div id="accordion--{{ loop.index }}" class="accordion-collapse collapse">
+					<div class="accordion-body">
+						{{ item.body | raw }}
+					</div>
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+</div>

@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: cavalla_link
+label: Link(s)
+icon_uuid: null
+icon_default: null
+description: "Link is a custom hyperlink element designed for the Cavalla website, styled to seamlessly integrate with the site's design, and used to direct users to related content or external resources."
+behavior_plugins: {  }

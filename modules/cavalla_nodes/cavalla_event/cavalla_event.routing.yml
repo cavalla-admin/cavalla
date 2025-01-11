@@ -1,0 +1,6 @@
+cavalla_event.filter:
+  path: '/cavalla_event/event/filter/{term_name}/{filter}'
+  defaults:
+    _controller: '\Drupal\cavalla_event\Controller\CavallaEventController::eventsByFilter'
+  requirements:
+    _permission: 'access content'

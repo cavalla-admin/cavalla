@@ -1,0 +1,6 @@
+cavalla_search.title:
+  path: '/cavalla_search/{title}'
+  defaults:
+    _controller: '\Drupal\cavalla_search\Controller\CavallaSearchController::searchNodes'
+  requirements:
+    _permission: 'access content'

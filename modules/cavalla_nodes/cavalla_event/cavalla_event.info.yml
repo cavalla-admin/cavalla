@@ -1,0 +1,10 @@
+name: 'Cavalla Site Builder: Event'
+type: module
+description: 'Use Cavalla Events to create Events content.'
+version: 8.x-1.0
+core: 8.x
+package: 'Cavalla Site Builder'
+dependencies:
+  - menu_ui
+
+core_version_requirement: ^8 || ^9

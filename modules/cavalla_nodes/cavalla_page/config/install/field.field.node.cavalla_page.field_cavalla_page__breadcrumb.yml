@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_cavalla_page__breadcrumb
+    - node.type.cavalla_page
+id: node.cavalla_page.field_cavalla_page__breadcrumb
+field_name: field_cavalla_page__breadcrumb
+entity_type: node
+bundle: cavalla_page
+label: 'Activate Breadcrumb'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

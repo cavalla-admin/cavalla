@@ -1,0 +1,66 @@
+<?php
+
+/**
+ * @file
+ * cavalla_hero module file.
+ */
+
+use Drupal\cavalla\Entity\Cavalla;
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\media\Entity\Media;
+use Drupal\cavalla_hero\Entity\CavallaTm;
+use Drupal\paragraphs\Entity\Paragraph;
+
+
+
+
+/**
+ * Implements hook_help().
+ *
+ * @inheritdoc
+ */
+function cavalla_hero_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.cavalla_hero':
+      $text = file_get_contents(dirname(__FILE__) . "/README.md");
+      if (!\Drupal::moduleHandler()->moduleExists('markdown')) {
+        return '<pre>' . $text . '</pre>';
+      }
+      else {
+        // Use the Markdown filter to render the README.
+        $filter_manager = \Drupal::service('plugin.manager.filter');
+        $settings = \Drupal::configFactory()->get('markdown.settings')->getRawData();
+        $config = ['settings' => $settings];
+        $filter = $filter_manager->createInstance('markdown', $config);
+        return $filter->process($text, 'en');
+      }
+  }
+  return NULL;
+}
+
+/**
+ * Implements hook_theme(). Lets us define our paragraphs templates in this module.
+ */
+function cavalla_hero_theme($existing, $type, $theme, $path) {
+  return [
+    'paragraph__cavalla_hero' => [
+      'base hook' => 'paragraph',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for paragraph templates.
+ */
+function cavalla_hero_preprocess_paragraph__cavalla_hero(&$variables) {
+
+  $paragraph = $variables['elements']['#paragraph'];
+    dump($paragraph);
+
+}
+
+
+
+      
+      
+    

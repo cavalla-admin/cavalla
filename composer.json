@@ -1,0 +1,33 @@
+{
+    "name": "egnyte/egnyte_site_builder",
+    "type": "drupal-module",
+    "description": "This module is designed to provide default content types and modules for the Egnyte.com",
+    "keywords": ["Drupal"],
+    "homepage": "https://github.com/ben2collins-cavalla/cavalla",
+    "license": "GPL-2.0-or-later",
+    "require": {
+        "drupal/paragraphs": "^1.12",
+        "drupal/field_group": "^3.0"
+    },
+    "minimum-stability": "dev",
+    "authors": [
+        {
+            "name": "Ben Collins",
+            "role": "Maintainer"
+        }
+    ],
+    "support": {
+        "source": "https://github.com/ben2collins-cavalla/cavalla"
+    },
+    "extra": {
+        "branch-alias": {
+            "8.x-2.x": "2.x-dev"
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Drupal\\cavalla\\": "modules/custom/cavalla/src"
+        }
+    }
+    
+}

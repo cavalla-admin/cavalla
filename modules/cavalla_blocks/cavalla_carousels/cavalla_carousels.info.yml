@@ -1,0 +1,9 @@
+name: 'Cavalla Site Builder: Carousel'
+type: module
+description: Cavalla Carousel is a dynamic, interactive display element used to present multiple slides of content, such as images, text, or videos, in a rotational format. 
+version: '8.x-1.0'
+core_version_requirement: ^9 || ^10
+
+
+package: Cavalla Site Builder
+dependencies:

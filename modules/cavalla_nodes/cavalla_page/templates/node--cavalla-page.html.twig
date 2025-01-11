@@ -1,0 +1,37 @@
+{% set eyebrow = content.field_cavalla_page__hero[0]['#paragraph'].field_cavalla_eyebrow_text.value %}
+{% set header = content.field_cavalla_page__hero[0]['#paragraph'].field_cavalla_header__text.value %}
+{% set body = content.field_cavalla_page__hero[0]['#paragraph'].field_cavalla_body.value %}
+
+<div class="cavalla-page">
+	<div class="cavalla-page--hero">
+		<div {{ attributes.addClass(grid_class) }}>
+			<div class="row">
+				<div class="col">
+					<div class="cavalla_hero__copy">
+						{% if eyebrow %}
+							<h6>{{ eyebrow }}</h6>
+						{% endif %}
+
+						{% if header %}
+							<h2>{{ header }}</h2>
+						{% endif %}
+
+						{% if body %}
+							<div>{{ body | raw }}</div>
+						{% endif %}
+
+					</div>
+				</div>
+				<div class="col-12">
+					<div class="cavalla_hero__figure" style="background-image:url('{{ contents.media[0]['image'] }}')"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="cavalla-page--widgets m-150 {{ grid_class }}">
+		<div {{ attributes.addClass(grid_class) }}>
+			{{ content.field_cavalla_page__site_blocks }}
+		</div>
+	</div>
+</div>

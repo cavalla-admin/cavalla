@@ -1,0 +1,69 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_cavalla_card__clink
+    - paragraphs.paragraphs_type.cavalla_card
+    - paragraphs.paragraphs_type.cavalla_link
+  module:
+    - entity_reference_revisions
+id: paragraph.cavalla_card.field_cavalla_card__clink
+field_name: field_cavalla_card__clink
+entity_type: paragraph
+bundle: cavalla_card
+label: Link(s)
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      cavalla_link: cavalla_link
+    negate: 0
+    target_bundles_drag_drop:
+      cavalla_accordions:
+        weight: 15
+        enabled: false
+      cavalla_accordions__accordion:
+        weight: 16
+        enabled: false
+      cavalla_body:
+        weight: 17
+        enabled: false
+      cavalla_card:
+        weight: 18
+        enabled: false
+      cavalla_cards:
+        weight: 19
+        enabled: false
+      cavalla_eyebrow:
+        weight: 20
+        enabled: false
+      cavalla_header:
+        weight: 21
+        enabled: false
+      cavalla_hero:
+        weight: 22
+        enabled: false
+      cavalla_image:
+        weight: 23
+        enabled: false
+      cavalla_link:
+        weight: 24
+        enabled: true
+      cavalla_media:
+        weight: 25
+        enabled: false
+      cavalla_tm:
+        weight: 26
+        enabled: false
+      copy:
+        weight: 27
+        enabled: false
+      hero_image:
+        weight: 28
+        enabled: false
+field_type: entity_reference_revisions

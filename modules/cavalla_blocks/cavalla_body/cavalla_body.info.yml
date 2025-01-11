@@ -1,0 +1,9 @@
+name: 'Cavalla Site Builder: Body'
+type: module
+description: Body text is the main content area of a webpage, featuring detailed information presented in a clear and readable format, supporting the overall message conveyed by the header and eyebrow text.
+version: '8.x-1.0'
+core_version_requirement: ^9 || ^10
+
+
+package: Cavalla Site Builder
+dependencies:

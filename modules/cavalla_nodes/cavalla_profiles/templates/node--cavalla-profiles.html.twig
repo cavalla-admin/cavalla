@@ -1,0 +1,88 @@
+<div class="cavalla_hero mb-5">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col offset-md-1">
+        
+        <div class="cavalla_hero__copy">
+          {% if ( content.field_cavalla_profile__fname ) or ( content.field_cavalla_profile__lname) %}
+            <h1 class="featurette-heading">{{ content.field_cavalla_profile__fname[0] }} {{ content.field_cavalla_profile__lname[0] }}</h1>
+          {% endif %}
+
+          {% if ( content.field_cavalla_profile__jtitle ) or ( content.field_cavalla_profile__employer) %}
+          <p class=" mt-100 p p--xlarge cavalla_hero__subtitle p margin-bottom-0">{{ content.field_cavalla_profile__jtitle[0] }} ,{{ content.field_cavalla_profile__employer[0] }}</p>
+          {% endif %}
+        </div>
+
+      </div> 
+      <div class="col-12">
+        <div class="cavalla_hero__figure" style="background-image:url('../themes/contrib/kuji_theme/templates/_includes/global/images/profile-hero.svg')"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container mb-5">
+  <div class="col-12">
+
+    {% if content.field_cavalla_profile__quote[0]  %}
+      <figure>
+        <blockquote class="blockquote mb-5">
+          {{ content.field_cavalla_profile__quote[0] }}
+        </blockquote>
+      </figure>
+    {% endif %}
+
+
+    {% if image %}
+    <div class="float-md-start me-3">
+      <img src="{{ image.0.image }}" alt="{{ image.0.image_alt }}"  class="" width="386" height="386" style="object-fit:cover"/>
+    </div>
+    {% endif %}
+
+    {% if content.field_cavalla_profile__bio %}
+      <div>
+        {{ content.field_cavalla_profile__bio }}   
+      </div>
+    {% endif %}
+
+    <!-- Certifications and Trainings<-->
+    {% if content.field_cavalla_profile__ct[0] %}
+    <div class="accordion accordion-flush" id="accordion--ct">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingOne">
+          <button class="accordion-button collapsed px-0" type="button" data-bs-toggle="collapse" data-bs-target="#profile-accordion--ct" aria-expanded="false" aria-controls="profile-accordion--ct">Certifications and Trainings</button>
+        </h2>
+        <div id="profile-accordion--ct" class="accordion-collapse collapse" aria-labelledby="profile-accordion--ct" data-bs-parent="#profile-accordion--ct">
+        <div class="accordion-body">{{ content.field_cavalla_profile__ct }}</div>
+      </div>
+    </div>
+    {% endif %}
+
+    <!--Professional Development and Leadership-->
+    {% if content.field_cavalla_profile__pdl[0] %}
+    <div class="accordion accordion-flush" id="accordion--pdl">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingOne">
+          <button class="accordion-button collapsed px-0" type="button" data-bs-toggle="collapse" data-bs-target="#profile-accordion--pdl" aria-expanded="false" aria-controls="profile-accordion--pdl">Professional Development and Leadership</button>
+        </h2>
+        <div id="profile-accordion--pdl" class="accordion-collapse collapse" aria-labelledby="profile-accordion--pdl" data-bs-parent="#profile-accordion--pdl">
+        <div class="accordion-body">{{ content.field_cavalla_profile__pdl }}</div>
+      </div>
+    </div>
+    {% endif %}
+
+
+    <!--Specializations and Interest-->
+    {% if content.field_cavalla_profile__si[0] %}
+    <div class="accordion accordion-flush" id="accordion--si">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingOne">
+          <button class="accordion-button collapsed px-0" type="button" data-bs-toggle="collapse" data-bs-target="#profile-accordion--si" aria-expanded="false" aria-controls="flush-collapseOne">Specializations and Interest</button>
+        </h2>
+        <div id="profile-accordion--si" class="accordion-collapse collapse" aria-labelledby="profile-accordion--si" data-bs-parent="#profile-accordion--si">
+        <div class="accordion-body">{{ content.field_cavalla_profile__si }}</div>
+      </div>
+    </div>
+    {% endif %}
+
+</div>

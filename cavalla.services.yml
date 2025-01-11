@@ -1,0 +1,9 @@
+services:
+  cavalla.services:
+    class: 'Drupal\cavalla\Entity\Cavalla'
+  cavalla_event.events:
+    class: 'Drupal\cavalla_event\Entity\CavallaEvent'
+  cavalla_profile_feed.services:
+    class: 'Drupal\cavalla_profile_feed\Entity\CavallaProfileFeed'
+  cavalla_search.services:
+    class: 'Drupal\cavalla_search\Entity\CavallaSearch'

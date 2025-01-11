@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.cavalla_link.field_cavalla_link__link
+    - paragraphs.paragraphs_type.cavalla_link
+  module:
+    - link
+id: paragraph.cavalla_link.default
+targetEntityType: paragraph
+bundle: cavalla_link
+mode: default
+content:
+  field_cavalla_link__link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

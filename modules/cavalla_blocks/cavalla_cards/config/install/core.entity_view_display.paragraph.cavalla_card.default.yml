@@ -1,0 +1,50 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.cavalla_card.field_cavalla_card__cbody
+    - field.field.paragraph.cavalla_card.field_cavalla_card__ceyebrow
+    - field.field.paragraph.cavalla_card.field_cavalla_card__cheader
+    - field.field.paragraph.cavalla_card.field_cavalla_card__clink
+    - paragraphs.paragraphs_type.cavalla_card
+  module:
+    - entity_reference_revisions
+    - text
+id: paragraph.cavalla_card.default
+targetEntityType: paragraph
+bundle: cavalla_card
+mode: default
+content:
+  field_cavalla_card__cbody:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_cavalla_card__ceyebrow:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_cavalla_card__cheader:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_cavalla_card__clink:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 4
+    region: content
+hidden: {  }

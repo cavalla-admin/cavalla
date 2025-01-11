@@ -1,0 +1,44 @@
+<div class="cards mt-4" id="{{ id_name }}">
+
+	{% if content.field_cavalla_header__text or content.field_cavalla_body %}
+		<div class="row">
+
+			{% if content.field_cavalla_header__text %}
+				<h2>{{ content.field_cavalla_header__text }}</h2>
+			{% endif %}
+
+			{% if content.field_cavalla_body %}
+				<div>{{ content.field_cavalla_body }}</div>
+			{% endif %}
+
+		</div>
+	{% endif %}
+
+	<div class="row row-cols-1 row-cols-md-3 g-4">
+		{% for item in cards_content %}
+			<div class="col">
+				<div class="card">
+
+					{% if item.image %}
+						<img src="{{ item.image.url }}" class="card-img-top" alt="{{ item.image.alt }}"/>
+					{% endif %}
+
+					<div class="card-body">
+
+						{% if item.eyebrow %}
+							<h6 class="card-title">{{ item.eyebrow }}</h6>
+						{% endif %}
+
+						<h3 class="card-title">{{ item.header }}</h3>
+						<div class="card-text">{{ item.body | raw }}</div>
+
+						{% if item.link.uri %}
+							<a href="{{ item.link.uri }}" class="btn btn-primary">{{ item.link.title }}</a>
+						{% endif %}
+
+					</div>
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+</div>

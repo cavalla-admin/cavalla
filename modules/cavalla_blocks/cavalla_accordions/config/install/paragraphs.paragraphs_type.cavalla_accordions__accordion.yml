@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: cavalla_accordions__accordion
+label: Accordion
+icon_uuid: null
+icon_default: null
+description: 'An individual component within an accordion block, consisting of a clickable title and corresponding hidden content. When the title is clicked, the content expands to reveal detailed information, enhancing user interactivity and organization.'
+behavior_plugins: {  }

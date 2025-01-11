@@ -1,0 +1,33 @@
+<div class="cavalla-event">
+  <div class="cavalla-event--hero">
+    <div class="cavalla_hero">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-8 container">
+            <div class="cavalla_hero__copy">
+            {% if page_title %}
+              <h1 class="cavalla_hero__title h1 mb-0">{{ page_title }}</h1>
+            {% endif %}
+             {% include '@cavalla_event/includes/searchField.html.twig' %}
+            </div>
+          </div> 
+          <div class="col-12">
+            <div class="cavalla_hero__figure" style="background-image:url('{{ image[0]['image'] }}')"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="cavalla-event--widgets py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-3">
+          {% include '@cavalla_event/includes/filter.html.twig' %}
+        </div>
+        <div class="col-9">
+          {% include '@cavalla_event/includes/results.html.twig' %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

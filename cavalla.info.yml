@@ -1,0 +1,23 @@
+name: 'Cavalla Site Builder'
+type: module
+description: 'Provides a paragraphs bundle for Site building purposes.'
+package: 'Cavalla Site Builder'
+core_version_requirement: ^8.8 || ^9 || ^10
+version: '8.x-3.0'
+dependencies:
+regions:
+  header: 'Header'
+  cart: 'cart'
+  primary_menu: 'Primary menu'
+  secondary_menu: 'Secondary menu'
+  admin_actions : 'Admin Actions'
+  help: 'Help'
+  alerts: 'Alerts'
+  breadcrumb: 'Breadcrumb'
+  content: 'Content'
+  sidebar_first: 'Sidebar first'
+  footer_first: 'Footer first'
+  footer_second: 'Footer second'
+  footer_third: 'Footer third'
+  legal_menu: 'Legal Menu'
+  dedicated_cta: 'Dedicated Call to Action'

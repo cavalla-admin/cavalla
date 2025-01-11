@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: cavalla_body
+label: Body
+icon_uuid: null
+icon_default: null
+description: 'Body text is the main content area of a webpage, featuring detailed information presented in a clear and readable format, supporting the overall message conveyed by the header and eyebrow text.'
+behavior_plugins: {  }

@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_cavalla_accordions__ahead
+    - paragraphs.paragraphs_type.cavalla_accordions__accordion
+id: paragraph.cavalla_accordions__accordion.field_cavalla_accordions__ahead
+field_name: field_cavalla_accordions__ahead
+entity_type: paragraph
+bundle: cavalla_accordions__accordion
+label: Header
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

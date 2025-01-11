@@ -1,0 +1,51 @@
+<?php
+
+/**
+ * @file
+ * Cavalla_cta module file.
+ */
+
+use Drupal\cavalla\Entity\Cavalla;
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\media\Entity\Media;
+
+
+/**
+ * Implements hook_help().
+ *
+ * @inheritdoc
+ */
+function cavalla_cta_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.cavalla_cta':
+      $text = file_get_contents(dirname(__FILE__) . "/README.md");
+      if (!\Drupal::moduleHandler()->moduleExists('markdown')) {
+        return '<pre>' . $text . '</pre>';
+      }
+      else {
+        // Use the Markdown filter to render the README.
+        $filter_manager = \Drupal::service('plugin.manager.filter');
+        $settings = \Drupal::configFactory()->get('markdown.settings')->getRawData();
+        $config = ['settings' => $settings];
+        $filter = $filter_manager->createInstance('markdown', $config);
+        return $filter->process($text, 'en');
+      }
+  }
+  return NULL;
+}
+
+/**
+ * Implements hook_theme(). Lets us define our paragraphs templates in this module.
+ */
+function cavalla_cta_theme($existing, $type, $theme, $path) {
+  return [
+    'paragraph__cavalla_cta' => [
+      'base hook' => 'paragraph',
+    ],
+  ];
+}
+function cavalla_cta_preprocess_paragraph__cavalla_cta(&$variables) {
+  $paragraph = $variables['elements']['#paragraph'];
+  $bkrd_image = $paragraph->get('field_cavalla_cta__image')->getValue();
+  $variables['image'] = Cavalla::getInstance()->getMediaUrl($bkrd_image ); 
+}

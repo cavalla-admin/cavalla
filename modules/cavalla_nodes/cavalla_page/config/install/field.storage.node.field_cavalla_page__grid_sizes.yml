@@ -1,0 +1,41 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_cavalla_page__grid_sizes
+field_name: field_cavalla_page__grid_sizes
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: container
+      label: container
+    -
+      value: container_sm
+      label: container-sm
+    -
+      value: container_md
+      label: container-md
+    -
+      value: container_lg
+      label: container-lg
+    -
+      value: container_xl
+      label: container-xl
+    -
+      value: container_xxl
+      label: container-xxl
+    -
+      value: container_fluid
+      label: container-fluid
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

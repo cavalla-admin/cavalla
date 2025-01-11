@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_cavalla_card__cbody
+    - filter.format.full_html
+    - paragraphs.paragraphs_type.cavalla_card
+  module:
+    - text
+id: paragraph.cavalla_card.field_cavalla_card__cbody
+field_name: field_cavalla_card__cbody
+entity_type: paragraph
+bundle: cavalla_card
+label: Body
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - full_html
+field_type: text_long

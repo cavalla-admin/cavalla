@@ -1,0 +1,63 @@
+<?php
+
+/**
+ * @file
+ * cavalla_cards module file.
+ */
+
+use Drupal\cavalla_cards\Entity\CavallaCards;
+use Drupal\cavalla\Entity\Cavalla;
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\media\Entity\Media;
+use Drupal\paragraphs\Entity\Paragraph;
+
+
+
+/**
+ * Implements hook_help().
+ *
+ * @inheritdoc
+ */
+function cavalla_cards_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.cavalla_cta':
+      $text = file_get_contents(dirname(__FILE__) . "/README.md");
+      if (!\Drupal::moduleHandler()->moduleExists('markdown')) {
+        return '<pre>' . $text . '</pre>';
+      }
+      else {
+        // Use the Markdown filter to render the README.
+        $filter_manager = \Drupal::service('plugin.manager.filter');
+        $settings = \Drupal::configFactory()->get('markdown.settings')->getRawData();
+        $config = ['settings' => $settings];
+        $filter = $filter_manager->createInstance('markdown', $config);
+        return $filter->process($text, 'en');
+      }
+  }
+  return NULL;
+}
+
+/**
+ * Implements hook_theme(). Lets us define our paragraphs templates in this module.
+ */
+function cavalla_cards_theme($existing, $type, $theme, $path) {
+  return [
+    'paragraph__cavalla_cards' => [
+      'base hook' => 'paragraph',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for cavalla_cards paragraph type.
+ *
+ * @param array $variables
+ *   An associative array containing:
+ *   - elements: An array of elements in the paragraph.
+ */
+function cavalla_cards_preprocess_paragraph__cavalla_cards(&$variables) {
+  // Get the paragraph entity from the elements array.
+  $paragraph = $variables['elements']['#paragraph'];
+  $variables['cards_content'] = CavallaCards::getInstance()->getValue($paragraph->field_cavalla_cards__items->getValue()) ?? [];
+}
+

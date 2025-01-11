@@ -1,0 +1,60 @@
+<?php
+
+/**
+ * @file
+ * cavalla_profiles module file.
+ */
+
+use Drupal\cavalla\Entity\Cavalla;
+use Drupal\Core\Routing\RouteMatchInterface;
+
+
+
+/**
+ * Implements hook_help().
+ *
+ * @inheritdoc
+ */
+function cavalla_profiles_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.cavalla_profiles':
+      $text = file_get_contents(dirname(__FILE__) . "/README.md");
+      if (!\Drupal::moduleHandler()->moduleExists('markdown')) {
+        return '<pre>' . $text . '</pre>';
+      }
+      else {
+        // Use the Markdown filter to render the README.
+        $filter_manager = \Drupal::service('plugin.manager.filter');
+        $settings = \Drupal::configFactory()->get('markdown.settings')->getRawData();
+        $config = ['settings' => $settings];
+        $filter = $filter_manager->createInstance('markdown', $config);
+        return $filter->process($text, 'en');
+      }
+  }
+  return NULL;
+}
+
+/**
+ * Implements hook_theme().
+ * Lets us define our paragraphs templates in this module.
+ */
+function cavalla_profiles_theme($existing, $type, $theme, $path) {
+  return [
+    'node__cavalla_profiles' => [
+      'base hook' => 'node',
+    ],
+
+  ];
+}
+
+function cavalla_profiles_preprocess_node__cavalla_profiles(array &$variables) {
+  
+  //Attaach js library to  paragrapph bundle.
+  $variables['#attached']['library'][] =  'cavalla_theme/cavalla-collaspe';
+
+  $node = $variables['elements']['#node'];
+  $variables['page_title']=$node->getTitle();
+
+  $variables['image'] = Cavalla::getInstance()->getMediaUrl($node->get('field_cavalla_profile__img')->getValue());
+
+}

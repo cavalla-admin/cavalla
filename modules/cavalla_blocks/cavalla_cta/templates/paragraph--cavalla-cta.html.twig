@@ -1,0 +1,11 @@
+ <div class="mb-5 cavalla_cta">
+  <div class="p-5 mb-4 bg-light rounded-3 container position-relative cavalla_cta__image" style="background-image:url( '{{ image }}' )" >
+    <div class="container-fluid position-relative text-center">
+      <h2>{{ content.field_cavalla_cta__title[0] }}</h2>
+      <p class="col-md-8 fs-4">{{ content.field_cavalla_cta__text[0] }}</p>
+      {% for key, item in content.field_cavalla_cta__link if key|first != '#' %}
+          <a class="btn btn-primary btn-lg mt-2" href="{{ content.field_cavalla_cta__link[key]['#url'] }}">{{ content.field_cavalla_cta__link[key]['#title'] }}</a>
+      {% endfor %}
+    </div>
+  </div>
+</div>

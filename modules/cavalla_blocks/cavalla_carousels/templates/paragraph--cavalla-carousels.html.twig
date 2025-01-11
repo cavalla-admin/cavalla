@@ -1,0 +1,36 @@
+<div id="{{ id_name }}" class="carousel carousel-dark slide mt-4" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    {% for item in slides %}
+      <button 
+        type="button" 
+        data-bs-target="#{{ id_name }}" 
+        data-bs-slide-to="{{ loop.index0 }}" 
+        class="{{ loop.first ? 'active' : '' }}" 
+        aria-current="{{ loop.first ? 'true' : '' }}" 
+        aria-label="Slide {{ loop.index }}">
+      </button>
+    {% endfor %}
+  </div>
+
+  <div class="carousel-inner">
+    {% for item in slides %}
+      <div class="carousel-item {{ loop.first ? 'active' : '' }}" data-bs-interval="10000">
+        <img src="{{ item.image.url }}" class="d-block w-100" alt="{{ item.image.alt }}">
+        <div class="carousel-caption bg-white d-none d-md-block">
+          <h5>{{ item.header }}</h5>
+          <div>{{ item.text | raw }}</div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+
+  <button class="carousel-control-prev" type="button" data-bs-target="#{{ id_name }}" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+
+  <button class="carousel-control-next" type="button" data-bs-target="#{{ id_name }}" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>

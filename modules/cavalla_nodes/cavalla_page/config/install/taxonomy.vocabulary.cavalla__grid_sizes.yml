@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Grid Size'
+vid: cavalla__grid_sizes
+description: 'Grid Sizes is a configuration field for defining responsive grid size options in the Cavalla Pages.'
+weight: 0
+new_revision: false

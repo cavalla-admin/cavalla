@@ -1,0 +1,75 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_cavalla_carousels__slide
+    - paragraphs.paragraphs_type.cavalla_carousels
+    - paragraphs.paragraphs_type.cavalla_carousels__carousel
+  module:
+    - entity_reference_revisions
+id: paragraph.cavalla_carousels.field_cavalla_carousels__slide
+field_name: field_cavalla_carousels__slide
+entity_type: paragraph
+bundle: cavalla_carousels
+label: Slides
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      cavalla_carousels__carousel: cavalla_carousels__carousel
+    negate: 0
+    target_bundles_drag_drop:
+      cavalla_accordions:
+        weight: 17
+        enabled: false
+      cavalla_accordions__accordion:
+        weight: 18
+        enabled: false
+      cavalla_body:
+        weight: 19
+        enabled: false
+      cavalla_card:
+        weight: 20
+        enabled: false
+      cavalla_cards:
+        weight: 21
+        enabled: false
+      cavalla_carousels:
+        weight: 22
+        enabled: false
+      cavalla_carousels__carousel:
+        weight: 23
+        enabled: true
+      cavalla_eyebrow:
+        weight: 24
+        enabled: false
+      cavalla_header:
+        weight: 25
+        enabled: false
+      cavalla_hero:
+        weight: 26
+        enabled: false
+      cavalla_image:
+        weight: 27
+        enabled: false
+      cavalla_link:
+        weight: 28
+        enabled: false
+      cavalla_media:
+        weight: 29
+        enabled: false
+      cavalla_tm:
+        weight: 30
+        enabled: false
+      copy:
+        weight: 31
+        enabled: false
+      hero_image:
+        weight: 32
+        enabled: false
+field_type: entity_reference_revisions

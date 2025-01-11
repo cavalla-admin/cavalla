@@ -1,0 +1,21 @@
+<div id="cavalla-event--results">
+  <div class="row">
+    {% for value in current_events %}
+    <div class="col-4 mb-4">
+      <div class="card">
+        <div class="col-12">
+          <img src="{{ value['image'][0]['image'] }}" width="100%" />
+        </div>
+        <div class="col-12">
+          <div class="card-body">
+            <h5 class="card-title">{{ value['title'] }}</h5>
+            <h6 class="card-text">{{ value['start_date'] }}</h6>
+            <div class="card-text">{{ value['field_cavalla_event__address'] }}</div>
+            <a href="{{ value['node_link'] }}"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>

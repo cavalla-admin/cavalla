@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: cavalla_tm
+label: 'Text and Media'
+icon_uuid: null
+icon_default: null
+description: 'A Text and Media Block is a flexible website component that combines textual content with multimedia elements, such as images, or videos.'
+behavior_plugins: {  }

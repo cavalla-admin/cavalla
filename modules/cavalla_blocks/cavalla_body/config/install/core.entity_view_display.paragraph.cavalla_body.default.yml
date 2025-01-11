@@ -1,0 +1,22 @@
+uuid: 3d93c91b-0af9-41f9-b336-8cde0adb1e4e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.cavalla_body.field_cavalla_body
+    - paragraphs.paragraphs_type.cavalla_body
+  module:
+    - text
+id: paragraph.cavalla_body.default
+targetEntityType: paragraph
+bundle: cavalla_body
+mode: default
+content:
+  field_cavalla_body:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

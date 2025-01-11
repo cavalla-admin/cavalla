@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: cavalla_accordions
+label: Accordions
+icon_uuid: null
+icon_default: null
+description: 'Cavalla Accordions are collapsible content elements designed to present information in an organized, interactive format. Users can click on titles to expand and reveal additional content, improving navigation and reducing visual clutter.'
+behavior_plugins: {  }

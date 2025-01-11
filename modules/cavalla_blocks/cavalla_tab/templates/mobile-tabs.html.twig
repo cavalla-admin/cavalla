@@ -1,0 +1,5 @@
+{% for value in tab_header %}
+<button data-id="#{{ value.tab_panel_id }}" class="dropdown-item {{ loop.first ? 'active' }} {{ value.column }}" type="button" role="tab" >
+      {{ value.title }}
+</button>
+{% endfor %}

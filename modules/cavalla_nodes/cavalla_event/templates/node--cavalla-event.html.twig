@@ -1,0 +1,78 @@
+<div class="cavalla-event">
+  <div class="cavalla-event--hero">
+    <div class="cavalla_hero">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col offset-md-1">
+            <div class="cavalla_hero__copy">
+            {% if page_title %}
+              <h1 class="cavalla_hero__title h1">{{ page_title }}</h1>
+            {% endif %}
+            </div>
+          </div> 
+          <div class="col-12">
+            <div class="cavalla_hero__figure" style="background-image:url('{{ image[0]['image'] }}')"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="cavalla-event--widgets py-5">
+    <div class="container-sm">
+      <div class="row">
+        <div class="col-md-7">
+        {{ content.field_cavalla_event__desc[0] }}
+        </div>
+        <div class="col"></div>
+        <div class="col-md-4 border text-sm-center text-start">
+          <div class="border-bottom p-3">
+            <h2 class="h3 text-decoration-none mb-0">Event Details</h2>
+          </div>
+          <div>
+            <ul class="cavalla-event--details list-group">
+              
+              {% if date %}
+              <li class="cavalla-event--details-date border-bottom">
+                <div class="row align-items-center">
+                  <div class="col-2 pb-sm-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="25" fill="currentColor" class="bi bi-calendar" viewBox="0 0 16 16">
+                      <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
+                    </svg>
+                  </div>
+                  <div class="col-10 py-4 ps-md-0">
+                    <h3 class="h6 text-uppercase p-1 bg-warning text-white cavalla-event--details-header">Event Date</h3>
+                    <div class="cavalla-event--details-date--event-dates text-start">{{ start_date }} {{ end_date }}</div>
+                  </div>
+                </div>
+              </li>
+              {% endif %}
+
+              {% if ( content.field_cavalla_event__address[0] ) or ( content.field_cavalla_event__location[0]['#city'] ) or ( content.field_cavalla_event__location[0]['#state '] )  %}
+              <li class="cavalla-event--details-location border-bottom">
+                <div class="row align-items-center">
+                  <div class="col-2 pb-sm-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="25" fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
+                      <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z"/>
+                      <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                    </svg>
+                  </div>
+                  <div class="col-10 py-4 ps-md-0">
+                    <h3 class="h6 text-uppercase p-1 bg-warning text-white cavalla-event--details-header">Address</h3>
+                    <div class="cavalla-event--details-date--event-location text-start">
+                      {{ content.field_cavalla_event__address[0] }}</br> 
+                      {{ content.field_cavalla_event__location[0]['#city'] }},
+                      {{ content.field_cavalla_event__location[0]['#state'] }}
+                    </div>
+                  </div>
+                </div>
+              </li>
+              {% endif %}
+
+
+
+            </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

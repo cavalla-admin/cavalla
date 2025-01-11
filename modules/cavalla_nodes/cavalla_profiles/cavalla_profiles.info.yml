@@ -1,0 +1,10 @@
+name: 'Cavalla Site Builder: Profiles'
+type: module
+description: 'Provides a node to create Profiles for Cavalla Pages.'
+version: 8.x-1.0
+core: 8.x
+package: 'Cavalla Site Builder'
+dependencies:
+  - menu_ui
+
+core_version_requirement: ^8 || ^9
