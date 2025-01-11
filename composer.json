@@ -1,9 +1,9 @@
 {
-    "name": "egnyte/egnyte_site_builder",
+    "name": "cavalla/cavalla_site_builder",
     "type": "drupal-module",
     "description": "This module is designed to provide default content types and modules for the Egnyte.com",
     "keywords": ["Drupal"],
-    "homepage": "https://github.com/ben2collins-cavalla/cavalla",
+    "homepage": "https://github.com/cavalla-admin/cavalla",
     "license": "GPL-2.0-or-later",
     "require": {
         "drupal/paragraphs": "^1.12",
@@ -17,7 +17,7 @@
         }
     ],
     "support": {
-        "source": "https://github.com/ben2collins-cavalla/cavalla"
+        "source": "https://github.com/cavalla-admin/cavalla"
     },
     "extra": {
         "branch-alias": {
