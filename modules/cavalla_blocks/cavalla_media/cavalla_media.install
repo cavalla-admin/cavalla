@@ -1,7 +1,0 @@
-<?php
-
-
-
-  function cavalla_media_update_8001() {
-    \Drupal::service('config.installer')->installDefaultConfig('module', 'cavalla_media');
-  }
