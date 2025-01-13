@@ -1,8 +1,11 @@
 name: 'Cavalla Site Builder: Text and Media'
 type: module
-description: Provides a paragraphs bundle for creating a Two Column block. 
-version: '8.x-1.0'
+description: A Text and Media Block is a flexible website component that combines textual content with multimedia elements, such as images, or videos.'
+version: '10.x-1.0'
 core_version_requirement: ^8.8 || ^9 || ^10
 package: Cavalla Site Builder
 dependencies:
-    - paragraphs
+  - cavalla_copy
+  - cavalla_link
+  - cavalla_media
+  - paragraphs

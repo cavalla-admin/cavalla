@@ -1,0 +1,14 @@
+name: 'Cavalla Site Builder: Copy'
+type: module
+description: 'Copy is used for creating and managing written content for sites built within the Cavalla platform.'
+version: '10.x-1.0'
+core_version_requirement: ^9 || ^10
+
+package: Cavalla Site Builder
+dependencies:
+  - cavalla_body
+  - cavalla_eyebrow
+  - cavalla_header
+  - paragraphs
+
+

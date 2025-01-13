@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: copy
+label: Copy
+icon_uuid: null
+icon_default: null
+description: 'Copy  is  text that provides the content intended for use on your website. It typically includes the final version of text, such as headlines, body copy, calls-to-action, and other messaging elements.'
+behavior_plugins: {  }

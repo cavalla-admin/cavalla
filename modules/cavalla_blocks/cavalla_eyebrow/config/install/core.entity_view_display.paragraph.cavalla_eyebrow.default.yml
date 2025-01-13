@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.cavalla_eyebrow.field_cavalla_eyebrow_text
+    - paragraphs.paragraphs_type.cavalla_eyebrow
+id: paragraph.cavalla_eyebrow.default
+targetEntityType: paragraph
+bundle: cavalla_eyebrow
+mode: default
+content:
+  field_cavalla_eyebrow_text:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

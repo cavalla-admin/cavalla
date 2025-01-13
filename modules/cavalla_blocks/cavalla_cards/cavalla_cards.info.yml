@@ -1,8 +1,14 @@
 name: 'Cavalla Site Builder: Cards'
 type: module
-description: Effortlessly organize and display content with our versatile HTML Card component, featuring a clean, modern layout for enhanced user engagement. 
-version: '8.x-1.0'
+description: Effortlessly organize and display content with our versatile HTML Card component, featuring a clean, modern layout for enhanced user engagement.
+version: '10.x-1.0'
 core_version_requirement: ^9 || ^10
 
 package: Cavalla Site Builder
 dependencies:
+  - cavalla_body
+  - cavalla_header
+  - cavalla_link
+  - paragraphs
+
+

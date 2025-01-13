@@ -1,0 +1,19 @@
+uuid: c0772745-2ee1-4ee0-861d-e6495dbd21d5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_cavalla_header__text
+    - paragraphs.paragraphs_type.copy
+id: paragraph.copy.field_cavalla_header__text
+field_name: field_cavalla_header__text
+entity_type: paragraph
+bundle: copy
+label: Header
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,13 @@
+<?php
+
+/**
+ * @file
+ * Egnyte_adr install file.
+ */
+
+/**
+ * Added new title and link field to adr feed.
+ */
+function cavalla_body_update_8001() {
+  \Drupal::service('config.installer')->installDefaultConfig('module', 'cavalla_body');
+}

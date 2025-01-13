@@ -1,9 +1,13 @@
 name: 'Cavalla Site Builder: Accordions'
 type: module
-description: Effortlessly organize and present content with our Accordion block for Drupal websites. Utilize collapsible sections to engage users and maintain a sleek layout. 
-version: '8.x-1.0'
+description: Effortlessly organize and present content with our Accordion block for Drupal websites. Utilize collapsible sections to engage users and maintain a sleek layout.
+version: '10.x-1.0'
 core_version_requirement: ^9 || ^10
 
 
 package: Cavalla Site Builder
 dependencies:
+  - cavalla_body
+  - cavalla_header
+  - paragraphs
+

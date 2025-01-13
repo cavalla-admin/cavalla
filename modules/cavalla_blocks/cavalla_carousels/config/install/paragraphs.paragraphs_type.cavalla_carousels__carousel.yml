@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: cavalla_carousels__carousel
+label: 'Carousel Slide'
+icon_uuid: null
+icon_default: null
+description: 'A customizable carousel slide component for showcasing content or images in a rotating, interactive format.'
+behavior_plugins: {  }

@@ -1,10 +1,12 @@
 name: 'Cavalla Site Builder: Eyebrow'
 type: module
 description: Eyebrow Text is a concise and prominent line of text placed above the main heading on a webpage, often used to provide context, highlight a key message, or introduce the content that follows.
-version: '8.x-1.0'
+version: '10.x-1.0'
 core_version_requirement: ^9 || ^10
 
 
 package: Cavalla Site Builder
 dependencies:
+  - paragraphs
+
 

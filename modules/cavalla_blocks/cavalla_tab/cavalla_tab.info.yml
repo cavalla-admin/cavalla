@@ -1,7 +1,7 @@
 name: 'Cavalla Site Builder: Tabs'
 type: module
-description: Effortlessly organize and present content with our Tabs block for Drupal websites. Utilize collapsible sections to engage users and maintain a sleek layout. 
-version: '8.x-1.0'
+description: Effortlessly organize and present content with our Tabs block for Drupal websites. Utilize collapsible sections to engage users and maintain a sleek layout.
+version: '10.x-1.0'
 core_version_requirement: ^9 || ^10
 
 

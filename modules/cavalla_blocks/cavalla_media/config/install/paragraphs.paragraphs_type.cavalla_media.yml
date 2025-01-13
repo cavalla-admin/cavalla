@@ -1,0 +1,10 @@
+uuid: 23b14d5c-0260-49fd-9448-b5c7f54af90c
+langcode: en
+status: true
+dependencies: {  }
+id: cavalla_media
+label: Media
+icon_uuid: null
+icon_default: null
+description: "Media refers to multimedia elements such as images and videos integrated into your website, designed to enhance user engagement and complement the site's content."
+behavior_plugins: {  }

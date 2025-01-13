@@ -1,0 +1,53 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_cavalla_copy__site_blocks
+    - paragraphs.paragraphs_type.cavalla_media
+    - paragraphs.paragraphs_type.cavalla_tm
+    - paragraphs.paragraphs_type.copy
+  module:
+    - entity_reference_revisions
+id: paragraph.cavalla_tm.field_cavalla_copy__site_blocks
+field_name: field_cavalla_copy__site_blocks
+entity_type: paragraph
+bundle: cavalla_tm
+label: 'Site Blocks'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      cavalla_media: cavalla_media
+      copy: copy
+    negate: 0
+    target_bundles_drag_drop:
+      cavalla_body:
+        weight: 9
+        enabled: false
+      cavalla_eyebrow:
+        weight: 10
+        enabled: false
+      cavalla_header:
+        weight: 11
+        enabled: false
+      cavalla_link:
+        weight: 12
+        enabled: false
+      cavalla_media:
+        weight: 13
+        enabled: true
+      cavalla_tm:
+        weight: 14
+        enabled: false
+      copy:
+        weight: 15
+        enabled: true
+      hero_image:
+        weight: 16
+        enabled: false
+field_type: entity_reference_revisions

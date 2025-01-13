@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: cavalla_eyebrow
+label: 'Eyebrow Text'
+icon_uuid: null
+icon_default: null
+description: 'Eyebrow Text is a concise and prominent line of text placed above the main heading on a webpage, often used to provide context, highlight a key message, or introduce the content that follows.'
+behavior_plugins: {  }

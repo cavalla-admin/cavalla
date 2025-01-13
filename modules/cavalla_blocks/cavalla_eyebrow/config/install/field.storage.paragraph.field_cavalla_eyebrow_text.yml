@@ -3,13 +3,15 @@ status: true
 dependencies:
   module:
     - paragraphs
-    - text
-id: paragraph.field_cavalla_body
-field_name: field_cavalla_body
+id: paragraph.field_cavalla_eyebrow_text
+field_name: field_cavalla_eyebrow_text
 entity_type: paragraph
-type: text_long
-settings: {  }
-module: text
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
 locked: false
 cardinality: 1
 translatable: true

@@ -1,10 +1,11 @@
 name: 'Cavalla Site Builder: Header'
 type: module
 description: Header Text is the primary heading on a webpage, designed to capture attention and convey the main theme or purpose of the page in a bold, prominent manner.
-version: '8.x-1.0'
+version: '10.x-1.0'
 core_version_requirement: ^9 || ^10
 
 
 package: Cavalla Site Builder
 dependencies:
+  - paragraphs
 

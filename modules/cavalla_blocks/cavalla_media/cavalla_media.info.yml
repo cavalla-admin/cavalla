@@ -1,10 +1,11 @@
 name: 'Cavalla Site Builder: Media'
 type: module
 description: Media refers to multimedia elements such as images and videos integrated into your website, designed to enhance user engagement and complement the site's content.
-version: '8.x-1.0'
+version: '10.x-1.0'
 core_version_requirement: ^9 || ^10
 
 
 package: Cavalla Site Builder
 dependencies:
+  - paragraphs
 

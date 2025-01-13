@@ -4,13 +4,13 @@ dependencies:
   config:
     - field.storage.paragraph.field_cavalla_body
     - filter.format.basic_html
-    - paragraphs.paragraphs_type.cavalla_body
+    - paragraphs.paragraphs_type.cavalla_carousels
   module:
     - text
-id: paragraph.cavalla_body.field_cavalla_body
+id: paragraph.cavalla_carousels.field_cavalla_body
 field_name: field_cavalla_body
 entity_type: paragraph
-bundle: cavalla_body
+bundle: cavalla_carousels
 label: Body
 description: ''
 required: false
