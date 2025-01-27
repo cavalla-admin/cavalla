@@ -28,8 +28,15 @@
 			</div>
 		</div>
 	</div>
+	
+	{% if breadcrumbs %}
+	<div class="{{ grid_class }}">
+		{{ breadcrumbs }}
+	</div>
+	{% endif %}
 
 	<div class="cavalla-page--widgets m-150 {{ grid_class }}">
+
 		<div {{ attributes.addClass(grid_class) }}>
 			{{ content.field_cavalla_page__site_blocks }}
 		</div>

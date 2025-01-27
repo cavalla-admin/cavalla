@@ -6,6 +6,7 @@ core_version_requirement: ^9 || ^10
 
 package: Cavalla Site Builder
 dependencies:
+  - cavalla
   - cavalla_body
   - cavalla_header
   - cavalla_link

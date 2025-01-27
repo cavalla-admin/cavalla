@@ -4,7 +4,8 @@ description: Effortlessly organize and present content with our Tabs block for D
 version: '10.x-1.0'
 core_version_requirement: ^9 || ^10
 
-
 package: Cavalla Site Builder
 dependencies:
+  - paragraphs
+  - cavalla
 

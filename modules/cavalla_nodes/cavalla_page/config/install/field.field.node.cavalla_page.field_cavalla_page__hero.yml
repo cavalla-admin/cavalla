@@ -1,0 +1,63 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_cavalla_page__hero
+    - node.type.cavalla_page
+    - paragraphs.paragraphs_type.copy
+  module:
+    - entity_reference_revisions
+id: node.cavalla_page.field_cavalla_page__hero
+field_name: field_cavalla_page__hero
+entity_type: node
+bundle: cavalla_page
+label: Hero
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      copy: copy
+    negate: 0
+    target_bundles_drag_drop:
+      cavalla_body:
+        weight: 7
+        enabled: false
+      cavalla_card:
+        weight: 14
+        enabled: false
+      cavalla_cards:
+        weight: 15
+        enabled: false
+      cavalla_eyebrow:
+        weight: 8
+        enabled: false
+      cavalla_header:
+        weight: 9
+        enabled: false
+      cavalla_hero:
+        weight: 18
+        enabled: false
+      cavalla_image:
+        weight: 19
+        enabled: false
+      cavalla_link:
+        weight: 10
+        enabled: false
+      cavalla_media:
+        weight: 11
+        enabled: false
+      cavalla_tm:
+        weight: 22
+        enabled: false
+      copy:
+        weight: 23
+        enabled: true
+      hero_image:
+        weight: 12
+        enabled: false
+field_type: entity_reference_revisions

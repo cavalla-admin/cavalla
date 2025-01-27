@@ -1,0 +1,6 @@
+<?php
+
+
+function cavalla_page_update_8001() {
+  \Drupal::service('config.installer')->installDefaultConfig('module', 'cavalla_page');
+}

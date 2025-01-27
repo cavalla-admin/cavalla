@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - footer
+      - main
+    parent: 'main:'
+name: Page
+type: cavalla_page
+description: 'Use Page to develop a custom Drupal page that displays dynamic content with tailored features and styling unique to your website.'
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: false

@@ -1,10 +1,16 @@
 name: 'Cavalla Site Builder: Page'
 type: module
-description: 'c'
+description: 'Use Page to develop a custom Drupal page that displays dynamic content with tailored features and styling unique to your website.'
 version: 8.x-3.0
 core: 8.x
 package: 'Cavalla Site Builder'
 dependencies:
   - menu_ui
+  - cavalla
+  - cavalla_accordions
+  - cavalla_copy
+  - cavalla_cards
+  - cavalla_carousels
+  - cavalla_tm
 
 core_version_requirement: ^8 || ^9 || ^10

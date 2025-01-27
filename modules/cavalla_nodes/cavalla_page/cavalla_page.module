@@ -3,32 +3,33 @@
 /**
  * @file
  * cavalla_page module file.
+ *
+ * This file contains implementations of hooks and functions related to the
+ * cavalla_page module, including theme definitions, preprocess functions,
+ * and menu local task suggestions.
  */
 
 use \Drupal\block\Entity\Block;
 use Drupal\Core\Routing\RouteMatchInterface;
-use Drupal\cavalla\Entity\Cavalla;
-use Drupal\cavalla_page\Entity\CavallaPage;
-use Drupal\Core\Url;
-use Drupal\node\Entity\Node;
-
-
-
-
 
 /**
  * Implements hook_help().
+ *
+ * Provides help content for the cavalla_page module.
  *
  * @inheritdoc
  */
 function cavalla_page_help($route_name, RouteMatchInterface $route_match) {
   switch ($route_name) {
     case 'help.page.cavalla_page':
+      // Load the README.md file content.
       $text = file_get_contents(dirname(__FILE__) . "/README.md");
+
+      // Check if the Markdown module exists.
       if (!\Drupal::moduleHandler()->moduleExists('markdown')) {
+        // If Markdown is unavailable, return the README content as plain text.
         return '<pre>' . $text . '</pre>';
-      }
-      else {
+      } else {
         // Use the Markdown filter to render the README.
         $filter_manager = \Drupal::service('plugin.manager.filter');
         $settings = \Drupal::configFactory()->get('markdown.settings')->getRawData();
@@ -42,26 +43,84 @@ function cavalla_page_help($route_name, RouteMatchInterface $route_match) {
 
 /**
  * Implements hook_theme().
- * Lets us define our paragraphs templates in this module.
+ *
+ * Defines custom templates for paragraphs, blocks, and breadcrumbs
+ * specific to the cavalla_page module.
  */
 function cavalla_page_theme($existing, $type, $theme, $path) {
   return [
     'node__cavalla_page' => [
       'base hook' => 'node',
     ],
-
     'block__cavalla_theme_breadcrumbs' => [
       'base hook' => 'block',
     ],
-
+    'menu_local_task__node' => [
+      'base hook' => 'menu_local_task',
+    ],
+    'breadcrumb__cavalla' => [
+      'base hook' => 'breadcrumb',
+    ],
   ];
 }
 
+/**
+ * Preprocess function for node templates of type cavalla_page.
+ *
+ * Adds breadcrumb and grid class variables for use in the node template.
+ */
 function cavalla_page_preprocess_node__cavalla_page(array &$variables) {
   $node = $variables['elements']['#node'];
-  $variables['page_title']= $node->getTitle();
-  $variables['contents'] = CavallaPage::getInstance()->getValue($node->field_cavalla_page__site_blocks->getValue()) ?? [];
-  $variables['grid_class'] = $node->field_cavalla_page__grid_sizes[0]->value ?? '';
+
+  // Retrieve breadcrumb activation status from the node's field.
+  $activate_breadcrumb = $node->field_cavalla_page__breadcrumb->value;
+  dump($activate_breadcrumb);
+
+  // Add the page title variable.
+  $variables['page_title'] = $node->getTitle();
+
+  // Add a grid class variable, transforming underscores to hyphens.
+  $variables['grid_class'] = str_replace('_', '-', $node->field_cavalla_page__grid_sizes[0]->value) ?? '';
+
+  // Load the breadcrumb block.
+  $breadcrumb = Block::load('cavalla_theme_breadcrumbs') ?? [];
+
+  // Add breadcrumb data if the activation flag is set.
+  $variables['breadcrumbs'] = $activate_breadcrumb == 1 ? \Drupal::entityTypeManager()->getViewBuilder('block')->view($breadcrumb) : [];
 }
 
+/**
+ * Preprocess function for the primary local tasks block.
+ *
+ * Adds grid class and primary local tasks tab variables for the block template.
+ */
+function cavalla_page_preprocess_block__cavalla_theme_primary_local_tasks(array &$variables) {
+  $node = \Drupal::routeMatch()->getParameter('node');
 
+  // Add a grid class variable, transforming underscores to hyphens.
+  $variables['grid_class'] = str_replace('_', '-', $node->field_cavalla_page__grid_sizes[0]->value) ?? '';
+
+  // Extract primary local tasks from the block content.
+  $block = $variables['elements']['content'];
+  $variables['task_tab'] = $block['#primary'];
+}
+
+/**
+ * Implements hook_theme_suggestions_menu_local_task_alter().
+ *
+ * Alters menu local task suggestions based on the current route and node.
+ */
+function cavalla_page_theme_suggestions_menu_local_task_alter(array &$suggestions, array $variables) {
+  // Get the current route match.
+  $route_match = \Drupal::routeMatch();
+  $route_name = $route_match->getRouteName();
+
+  // Check if the current route has a node parameter.
+  if ($route_match->getParameter('node')) {
+    // Exclude suggestions for edit and revision routes.
+    if ($route_name !== 'entity.node.edit_form' && $route_name !== 'entity.node.version_history') {
+      // Add a custom suggestion for menu local tasks for nodes.
+      $suggestions[] = 'menu_local_task__node';
+    }
+  }
+}

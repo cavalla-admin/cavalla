@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.cavalla_page.field_cavalla_page__breadcrumb
+    - field.field.node.cavalla_page.field_cavalla_page__grid_sizes
+    - field.field.node.cavalla_page.field_cavalla_page__hero
+    - field.field.node.cavalla_page.field_cavalla_page__site_blocks
+    - node.type.cavalla_page
+  module:
+    - user
+id: node.cavalla_page.teaser
+targetEntityType: node
+bundle: cavalla_page
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_cavalla_page__breadcrumb: true
+  field_cavalla_page__grid_sizes: true
+  field_cavalla_page__hero: true
+  field_cavalla_page__site_blocks: true

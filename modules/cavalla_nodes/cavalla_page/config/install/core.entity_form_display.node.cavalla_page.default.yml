@@ -1,0 +1,146 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.cavalla_page.field_cavalla_page__breadcrumb
+    - field.field.node.cavalla_page.field_cavalla_page__grid_sizes
+    - field.field.node.cavalla_page.field_cavalla_page__hero
+    - field.field.node.cavalla_page.field_cavalla_page__site_blocks
+    - node.type.cavalla_page
+  module:
+    - field_group
+    - paragraphs
+    - path
+third_party_settings:
+  field_group:
+    group_cavalla_page__hero:
+      children:
+        - field_cavalla_page__hero
+      label: Hero
+      region: content
+      parent_name: ''
+      weight: 2
+      format_type: details
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        open: false
+        description: "The Hero Image is a large, prominently displayed image or graphic at the top of a webpage, intended to capture visitors' attention and set the visual tone for the page.\t"
+        required_fields: false
+    group_cavalla_site_blocks:
+      children:
+        - field_cavalla_page__site_blocks
+      label: 'SIte Blocks'
+      region: content
+      parent_name: ''
+      weight: 3
+      format_type: details
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        open: false
+        description: 'Site Blocks are customizable components for building and structuring web pages.'
+        required_fields: false
+    group_cavalla_page__doptions:
+      children:
+        - field_cavalla_page__grid_sizes
+        - field_cavalla_page__breadcrumb
+      label: 'Display Options'
+      region: content
+      parent_name: ''
+      weight: 1
+      format_type: details
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        label_as_html: false
+        open: false
+        description: 'Display options for customizing content presentation, including breadcrumb navigation and sidebar menu settings in Cavalla Web Pages'
+        required_fields: false
+id: node.cavalla_page.default
+targetEntityType: node
+bundle: cavalla_page
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_cavalla_page__breadcrumb:
+    type: boolean_checkbox
+    weight: 9
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_cavalla_page__grid_sizes:
+    type: options_select
+    weight: 8
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_cavalla_page__hero:
+    type: entity_reference_paragraphs
+    weight: 2
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: closed
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: hero_image
+    third_party_settings: {  }
+  field_cavalla_page__site_blocks:
+    type: entity_reference_paragraphs
+    weight: 10
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: closed
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: _none
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 7
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 4
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  promote: true
+  sticky: true

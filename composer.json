@@ -7,7 +7,8 @@
     "license": "GPL-2.0-or-later",
     "require": {
         "drupal/paragraphs": "^1.12",
-        "drupal/field_group": "^3.0"
+        "drupal/field_group": "^3.0",
+        "drupal/menu_breadcrumb": "^2.0"
     },
     "minimum-stability": "dev",
     "authors": [
@@ -29,5 +30,5 @@
             "Drupal\\cavalla\\": "modules/custom/cavalla/src"
         }
     }
-    
+
 }

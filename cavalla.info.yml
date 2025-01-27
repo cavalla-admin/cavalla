@@ -6,7 +6,7 @@ core_version_requirement: ^8.8 || ^9 || ^10
 version: '8.x-3.0'
 dependencies:
   - link_attributes
-  - paragraph
+  - paragraphs
 
 regions:
   header: 'Header'
